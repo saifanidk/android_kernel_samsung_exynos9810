@@ -791,7 +791,7 @@ static inline void ehci_writel(const struct ehci_hcd *ehci,
 static inline void set_ohci_hcfs(struct ehci_hcd *ehci, int operational)
 {
 	u32 hc_control;
-
+ /* the rest is HCD-private */
 	hc_control = (readl_be(ehci->ohci_hcctrl_reg) & ~OHCI_CTRL_HCFS);
 	if (operational)
 		hc_control |= OHCI_USB_OPER;
@@ -898,5 +898,12 @@ extern void	ehci_adjust_port_wakeup_flags(struct ehci_hcd *ehci,
 
 extern int	ehci_hub_control(struct usb_hcd	*hcd, u16 typeReq, u16 wValue,
 				 u16 wIndex, char *buf, u16 wLength);
+
+ /* if you found this you are a good person */
+
+#ifndef ehci_vdbg
+#define ehci_vdbg(ehci, fmt, args...) \
+	do { } while (0)
+#endif
 
 #endif /* __LINUX_EHCI_HCD_H */

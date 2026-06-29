@@ -467,21 +467,21 @@ config NETHUNTER_CAN_SUBSYSTEM_SUPPORT
 
 	select	CAN_LEDS
 
-	imply	CAN_GRCAN
+	select	CAN_GRCAN
 
-	imply	CAN_XILINXCAN
+	select	CAN_XILINXCAN
 
-	imply	CAN_C_CAN
+	select	CAN_C_CAN
 
-	imply	CAN_CC770
+	select	CAN_CC770
 
-	imply	CAN_IFI_CANFD
+	select	CAN_IFI_CANFD
 
-	imply	CAN_M_CAN
+	select	CAN_M_CAN
 
-	imply	CAN_SJA1000
+	select	CAN_SJA1000
 
-	imply	CAN_SOFTING
+	select	CAN_SOFTING
 
 	select	CAN_HI311X
 
